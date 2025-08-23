@@ -36,7 +36,10 @@ def _run_uvicorn(temp_dir, port):
     Internal function to run uvicorn in the specified directory on the given port.
     This will run in a separate daemon process.
     """
-    subprocess.run(["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", str(port)], cwd=temp_dir)
+    subprocess.run(
+        ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", str(port)],
+        cwd=temp_dir,
+    )
 
 
 def run_app(tag, name):
@@ -57,10 +60,7 @@ def run_app(tag, name):
     p.start()
 
     # Record deployment info
-    ACTIVE_DEPLOYMENTS[name] = {
-        "tag": tag,
-        "port": port
-    }
+    ACTIVE_DEPLOYMENTS[name] = {"tag": tag, "port": port}
 
 
 def deploy_all():

@@ -11,9 +11,6 @@ def list_deployments():
     Returns currently deployed apps (tag + port)
     """
     return {
-        name: {
-            "tag": info["tag"],
-            "port": info["port"]
-        }
+        name: {"tag": info["tag"], "port": info["port"]}
         for name, info in ACTIVE_DEPLOYMENTS.items()
     }
