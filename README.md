@@ -23,10 +23,10 @@ A lightweight **developer tool** to deploy multiple Git-tagged versions of a Fas
 
 ## Installation
 
-Install via pip:
+Install via pip using the pypi package:
 
 ```bash
-pip install .
+pip install git-tag-deploy
 ````
 
 This installs the package and registers the `git-tag-deploy` CLI.
