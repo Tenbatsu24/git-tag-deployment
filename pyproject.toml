@@ -9,8 +9,16 @@ description = "Dev tool to deploy git-tagged versions of a FastAPI app"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-    {name = "Your Name", email = "you@example.com"}
+    {name = "Tenbatsu24", email = "puruvaish24@outlook.com"}
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+keywords = ["fastapi", "deployment", "git", "automation", "cli"]
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E*"]
+
 dependencies = [
     "pyyaml",
     "fastapi",
