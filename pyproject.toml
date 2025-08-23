@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-tag-deploy"
+version = "0.1.0"
+description = "Dev tool to deploy git-tagged versions of a FastAPI app"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Your Name", email = "you@example.com"}
+]
+dependencies = [
+    "pyyaml",
+    "fastapi",
+    "uvicorn"
+]
+
+[project.scripts]
+# CLI entry point: after pip install ., running `git-tag-deploy` will launch main()
+git-tag-deploy = "git_tag_deploy.cli:main"
