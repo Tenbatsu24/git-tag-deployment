@@ -31,18 +31,18 @@ def find_free_port(start=8001, end=9000):
     raise RuntimeError("No free port available")
 
 
-def _run_uvicorn(temp_dir, port):
+def _run_uvicorn(temp_dir, port, entrypoint):
     """
     Internal function to run uvicorn in the specified directory on the given port.
     This will run in a separate daemon process.
     """
     subprocess.run(
-        ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", str(port)],
+        ["uvicorn", entrypoint, "--host", "0.0.0.0", "--port", str(port)],
         cwd=temp_dir,
     )
 
 
-def run_app(tag, name):
+def run_app(tag, name, entrypoint="app.main:app"):
     """
     Deploy a git tag:
     - Clone repo to temp dir
@@ -56,11 +56,11 @@ def run_app(tag, name):
     port = find_free_port()
 
     # Start uvicorn in a daemon process
-    p = Process(target=_run_uvicorn, args=(temp_dir, port), daemon=True)
+    p = Process(target=_run_uvicorn, args=(temp_dir, port, entrypoint), daemon=True)
     p.start()
 
     # Record deployment info
-    ACTIVE_DEPLOYMENTS[name] = {"tag": tag, "port": port}
+    ACTIVE_DEPLOYMENTS[name] = {"tag": tag, "port": port, "entrypoint": entrypoint}
 
 
 def deploy_all():
@@ -69,4 +69,5 @@ def deploy_all():
     """
     deployments = read_deployment_file()
     for d in deployments:
-        run_app(d["git_tag"], d["name"])
+        entrypoint = d.get("entrypoint", "app.main:app")
+        run_app(d["git_tag"], d["name"], entrypoint)
