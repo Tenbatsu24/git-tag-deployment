@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "git-tag-deploy"
-version = "0.1.0"
+version = "0.2.0"
 description = "Dev tool to deploy git-tagged versions of a FastAPI app"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -14,6 +14,14 @@ authors = [
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
+    "License :: OSI Approved :: Apache Software License",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Utilities"
 ]
 keywords = ["fastapi", "deployment", "git", "automation", "cli"]
 license = "Apache-2.0"
