@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "git-tag-deploy"
-version = "0.2.0"
+version = "0.2.1"
 description = "Dev tool to deploy git-tagged versions of a FastAPI app"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -35,6 +35,10 @@ dependencies = [
 [project.scripts]
 # CLI entry point
 git-tag-deploy = "git_tag_deploy.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/Tenbatsu24/git-tag-deployment"
+"Documentation" = "https://github.com/Tenbatsu24/git-tag-deployment#readme"
 
 [tool.black]
 line-length = 88
