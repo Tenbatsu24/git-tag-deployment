@@ -100,7 +100,7 @@ tenbatsu24-git-tag-deployment/
 * [ ] Implement logging for deployment processes.
 * [ ] Add health checks for deployed applications.
 * [ ] Clean up temporary directories after deployments.
-* [ ] Custom deployment scripts/hooks. (not just uvicorn app.main:app)
+* [x] Custom deployment scripts/hooks. (not just uvicorn app.main:app)
 * [ ] Docker support for containerized deployments of git tags.
 
 ## License
